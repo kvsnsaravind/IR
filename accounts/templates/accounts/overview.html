@@ -1,0 +1,318 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+<center>
+
+ 
+    
+
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+
+<canvas id="myChart" style="width:100%;max-width:800px"></canvas>
+
+<script>
+var xValues = ["coronavirus", "covid", "sanitizer", "pandemic", "mask","pandemia","coronaviruspandemic","virus","test","sociladistance"];
+var yValues = [1006, 15998, 310, 1354, 3089, 630,1030 ,1009,1400,1000];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145",
+  "#96a6a6",
+  "#ff1aff",  "#993333", "#85e085","#003333"
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: " Overall Top hashtags on Twitter"
+    }
+  }
+});
+</script>
+
+</body>
+<br>
+<br>
+
+</html>
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+
+<p><b><h2>Country Wise Distribution Of tweets</h2></b><p/>
+<canvas id="myChart1" style="width:100%;max-width:800px"></canvas>
+
+<script>
+var xValues = ["India","Mexico", "USA"];
+var yValues = [105000, 30000, 49963];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797"
+];
+
+new Chart("myChart1", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<p><h2><b>Language Wise Distribution Of tweets</b></h2><p/>
+<canvas id="myChart2" style="width:100%;max-width:800px"></canvas>
+
+<script>
+var xValues = ["Hindi","Spanish", "English"];
+var yValues = [5000, 3000, 15554];
+var barColors = [
+  "#993333",
+  "#85e085",
+  "#003333"
+];
+
+new Chart("myChart2", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+<br><br>
+
+
+<br><br>
+
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("123", {
+  animationEnabled: true,
+  theme: "light2", // "light1", "light2", "dark1", "dark2"
+  title:{
+    text: "Tweets vs Keywords "
+  },
+  axisY: {
+    title: "Total tweets"
+  },
+  data: [{        
+    type: "column",  
+    showInLegend: true, 
+    legendMarkerColor: "grey",
+    legendText: "Keywords",
+    dataPoints: [      
+      { y: 8255, label: "workfromhome" },
+      { y: 5233,  label: "vaccine" },
+      { y: 3595,  label: "Maskmandate" },
+      { y: 1720,  label: "Quarantine" },
+      { y: 1488,  label: "staysafe" },
+      { y: 3089, label: "pandemic" },
+      { y: 1980,  label: "coronaviruspandemic" },
+      { y: 1488,  label: "secondwave" }
+    ]
+  }]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="123" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
+<br><br>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Sentimental Analysis', 'positive', 'Negative', 'Neutral'],
+          ['workfromhome', 2476, 2444, 3302],
+          ['vaccine', 3133, 1045, 1044],
+          ['Maskmandate', 2716, 523, 356],
+          ['Quarantine', 688, 516, 516]
+
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Sentimental Analysis of keywords',
+            
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
+ <br><br>
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Choropleth Map</title>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-map.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/geodata/custom/world/world.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-data-adapter.min.js"></script>
+  
+    <style>
+      #container{
+        width:1000px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="container"></div>
+    <script>
+  
+      anychart.onDocumentReady(function () {
+  
+        // load the data
+        anychart.data.loadJsonFile("https://static.anychart.com/git-storage/word-press/data/choropleth-map-tutorial/data.json", function (data) {
+  
+          // Variables
+          // go into the records section of the data
+          var geoData = data.records
+  
+          // sum of all cases per country
+          var sumCases = 0;
+  
+          // convert cases to numbers
+          var numC;
+  
+          // create a new array with the resulting data
+          var data = [];
+  
+          // Go through the initial data
+          for (var i = 0; i < geoData.length; i++) {
+            // convert strings to numbers and save them to new variables
+            numC = parseInt(geoData[i].cases);
+  
+            // check if we are in the same country by comparing the geoId. 
+            // if the country is the same add the cases to the appropriate variables
+            if ((geoData[i + 1]) != null && (geoData[i].geoId == geoData[i + 1].geoId)) {
+              sumCases = sumCases + numC;
+            }
+            else {
+  
+              // add last day cases of the same country
+              sumCases = sumCases + numC;
+  
+              // insert the resulting data in the array using the AnyChart keywords 
+              data.push({ id: geoData[i].geoId, value: sumCases, title: geoData[i].countriesAndTerritories })
+  
+              // reset the variables to start over
+              sumCases = 0;
+  
+            }
+          };
+  
+          // connect the data with the map
+          var chart = anychart.map(data);
+          chart.geoData(anychart.maps.world);
+  
+          // specify the chart type and set the series 
+          var series = chart.choropleth(data);
+  
+          // set the chart title
+          chart.title("COVID-19 Global Cases");
+  
+          // color scale ranges
+          ocs = anychart.scales.ordinalColor([
+            { less: 99 },
+            { from: 100, to: 999 },
+            { from: 1000, to: 9999 },
+            { from: 10000, to: 29999 },
+            { from: 30000, to: 39000 },
+            { from: 40000, to: 59000 },
+            { from: 60000, to: 99999 },
+            { greater: 100000 }
+          ]);
+  
+          // set scale colors
+          ocs.colors(["rgb(252,245,245)", "rgb(241,219,216)", "rgb(229,190,185)", "rgb(211,152,145)", "rgb(192,117,109)", "rgb(178,93,86)", "rgb(152,50,48)", "rgb(150,33,31)"]);
+  
+          // tell the series what to use as a colorRange (colorScale)
+          series.colorScale(ocs);
+  
+          // set the container id
+          chart.container('container');
+          
+          // draw the chart
+          chart.draw();
+        });
+  
+      });
+    </script>
+  </body>
+  
+  </html>
+{% endblock %}
+

@@ -1,0 +1,414 @@
+
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+   
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter markup</title>
+    
+  </head>
+  <style>
+    /* brand.css  start*/
+    .brand {
+  height: 28px;
+  filter: invert(46%) sepia(99%) saturate(1449%) hue-rotate(176deg) brightness(100%) contrast(91%);
+  padding: 10px;
+}
+/* brand.css  start*/
+
+/* layout.css  start*/
+.layout {
+  display: grid;
+  grid-template-columns: 275px auto 350px;
+  margin: 0 auto;
+  max-width: 1200px;
+  row-gap: 500px;
+}
+
+.layout__right-sidebar {
+  position: fixed;
+  width: 350px;
+}
+
+/* layout.css  end*/
+
+/*sidebarmenu.css start*/
+.sidebar-menu {
+  position: fixed;
+}
+
+.sidebar-menu__item {
+  font-size: 19px;
+  color: #0F141A;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.sidebar-menu__item:hover {
+  background: rgba(29, 161, 242, 0.1);
+  color: #1da0f2;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.sidebar-menu__item--active {
+  color: #1da0f2;
+}
+
+.sidebar-menu__item-icon {
+  height: 26px;
+  margin-right: 20px;
+}
+
+.sidebar-menu__item--active .sidebar-menu__item-icon {
+  filter: invert(67%) sepia(60%) saturate(4956%) hue-rotate(176deg) brightness(95%) contrast(99%);
+}
+/*sidebarmenu.css end*/
+
+/*tweet.css start*/
+.tweet {
+  display: flex;
+  border-bottom: 1px solid #e6ecf0;
+  margin-bottom: 2px;
+  padding: 10px 15px;
+}
+
+.tweet:hover {
+  background: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+
+.tweet a {
+  color: #1b94e0;
+  text-decoration: none;
+}
+
+.tweet a:hover {
+  text-decoration: underline;
+}
+
+.tweet__author-logo {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.tweet__header {
+  display: flex;
+}
+
+.tweet__author-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #14171a;
+  margin-right: 5px;
+}
+
+.tweet__author-slug {
+  color: #5b7083;
+  font-size: 15px;
+}
+
+.tweet__publish-time {
+  margin-left: 5px;
+  color: #657786;
+}
+
+.tweet__image {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+/*tweet.css end*/
+
+/*who-to-follow.css start*/
+.who-to-follow {
+  background: #f5f8fa;
+  border-radius: 15px;
+}
+
+
+.who-to-follow__block {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.who-to-follow__block:last-child {
+  border-bottom: none;
+}
+
+.who-to-follow__author-logo {
+  width: 49px;
+  height: 49px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.who-to-follow__author-slug {
+  color: #657786;
+  font-size: 15px;
+}
+
+.who-to-follow__author-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.who-to-follow__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.who-to-follow__heading {
+  font-size: 19px;
+  font-weight: bold;
+  color: #14171a;
+}
+
+.who-to-follow__button {
+  border: 1px solid #1da0f2;
+  color: #1da0f2;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 5px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.who-to-follow__button:hover {
+  background: rgba(29, 161, 242, 0.1);
+  cursor: pointer;
+}
+
+/*who-to-follow.css end*/
+
+  </style>
+  <body>
+    <div class="layout">
+      <div class="layout__left-sidebar">
+        <!--<img src="./svg/twitter.svg" class="brand" />-->
+        <br/>
+        <div class="sidebar-menu">
+          <div class="sidebar-menu__item sidebar-menu__item--active">
+            <!--<img src="./svg/home.svg" class="sidebar-menu__item-icon" />-->
+
+
+            <div class="btn-group">
+              
+              
+            </div>
+            
+          </div>
+
+
+          <div class="sidebar-menu__item">
+            <!-- <img src="./svg/explore.svg" class="sidebar-menu__item-icon" /> -->
+            <div class="btn-group">
+              <!-- <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Language
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Hindi</a>
+                <a class="dropdown-item" href="#">English</a>
+                <a class="dropdown-item" href="#">Spanish</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div> -->
+            </div>
+
+
+          </div>
+
+          <div class="sidebar-menu__item">
+            <!-- <img
+              src="./svg/notifications.svg"
+              class="sidebar-menu__item-icon"
+            /> -->
+            <div class="btn-group">
+              <!-- <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                POI
+              </button> -->
+              <!-- <div class="dropdown-menu"> -->
+                <!-- <a class="dropdown-item" href="#">Narendra Modi</a>
+                <a class="dropdown-item" href="#">Aravind kejrewal</a>
+                <a class="dropdown-item" href="#">Amith Shah</a> -->
+                <div class="dropdown-divider"></div>
+                <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+              <!-- </div> -->
+            </div>
+
+          </div>
+
+          <!-- <div class="sidebar-menu__item">
+            <img src="./svg/messages.svg" class="sidebar-menu__item-icon" />
+            Messages
+          </div>
+
+          <div class="sidebar-menu__item">
+            <img src="./svg/profile.svg" class="sidebar-menu__item-icon" />
+            Profile
+          </div>
+
+          <div class="sidebar-menu__item">
+            <img src="./svg/more.svg" class="sidebar-menu__item-icon" />
+            More
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="layout__main">
+        <div class="tweet">
+                 <!-- <img class="tweet__author-logo" src="./images/profile-image-1.jpg" /> -->
+                  <div class="tweet__main">
+                    <div class="tweet__header">
+                      <!-- <div class="tweet__author-name">
+                        Elixir Digest
+                      </div> -->
+                      <!-- <div class="tweet__author-slug">
+                        @elixirdigest
+                      </div> -->
+                      <div class="tweet__publish-time">
+                        {{i.numFound}}
+                      </div>
+                    </div>
+                    <div class="tweet__content">
+                     <h1>You searched for {{ searched }}</h1>
+                      <!-- <a href="https://elixirdigest.net/digests/276"
+                        >https://elixirdigest.net/digests/276</a
+                      > -->
+                      <!-- @_tamas_soos #myelixirstatus #elixirlang #phoenixframework -->
+                    </div>
+                  </div>
+                </div>
+
+      {% if searched %}
+      <!--<h1>You searched for {{ searched }}</h1>-->
+      {% for i in data %}
+      
+      
+      
+
+        <div class="tweet">
+          <!-- <img class="tweet__author-logo" src="./1.png"  border="0" width="259" /> -->
+          <div class="tweet__main">
+            <div class="tweet__header">
+              <div class="tweet__author-name">
+                {{ i.user_name }}
+              </div>
+              <div class="tweet__author-slug">
+                {{ i.screen_name }}
+              </div>
+              <!-- <div class="tweet__publish-time">
+                {{i.numFound}}
+              </div> -->
+            </div>
+            <div class="tweet__content">
+              <p>{{ i.tweet_text}}</p>
+              <p>reply:{{i.reply_text}}</p>
+            </div>
+            <div class="tweet__author-slug">
+              <p><h6>{{ i.sentiment }} </h6></p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}<center>
+          <h1>Hey! You Forgot to Search</h1>
+          </center>
+        {%endif%}
+
+
+        <!-- END -->
+        
+
+        
+
+        
+
+        
+
+        
+      
+          <!-- <div class="who-to-follow">
+            <div class="who-to-follow__block">
+              <div class="who-to-follow__heading">
+                Who to follow
+              </div>
+            </div>
+            <div class="who-to-follow__block">
+              <img
+                class="who-to-follow__author-logo"
+                src="./images/profile-image-1.jpg"
+              />
+              <div class="who-to-follow__content">
+                <div>
+                  <div class="who-to-follow__author-name">
+                    Becki (& Chris)
+                  </div>
+                  <div class="who-to-follow__author-slug">
+                    @beckiandchris
+                  </div>
+                </div>
+                <div class="who-to-follow__button">
+                  Follow
+                </div>
+              </div>
+            </div>
+            <div class="who-to-follow__block">
+              <img
+                class="who-to-follow__author-logo"
+                src="./images/profile-image-2.png"
+              />
+              <div class="who-to-follow__content">
+                <div>
+                  <div class="who-to-follow__author-name">
+                    Elixir Digest
+                  </div>
+                  <div class="who-to-follow__author-slug">
+                    @elixirdigest
+                  </div>
+                </div>
+                <div class="who-to-follow__button">
+                  Follow
+                </div>
+              </div>
+            </div>
+
+            <div class="who-to-follow__block">
+              <img
+                class="who-to-follow__author-logo"
+                src="./images/profile-image-3.jpg"
+              />
+              <div class="who-to-follow__content">
+                <div>
+                  <div class="who-to-follow__author-name">
+                    Chris Martin
+                  </div>
+                  <div class="who-to-follow__author-slug">
+                    @chris_martin
+                  </div>
+                </div>
+                <div class="who-to-follow__button">
+                  Follow
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

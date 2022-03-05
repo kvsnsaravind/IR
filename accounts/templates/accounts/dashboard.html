@@ -1,0 +1,77 @@
+{% extends 'accounts/main.html' %}
+
+	
+
+{% block content %}
+<div style="background-image: url('https://unsplash.com/photos/qDG7XKJLKbs');">
+
+<center>
+
+  <style>
+    body {
+      background-color: #a9e9de;
+    }
+    .btn-outline-info{
+      width:5%;
+    }
+    /* .searchbar{
+      width:50%;
+      padding:15px 0;
+      
+    } */
+
+    input {
+    width: 40%;
+    padding: 0px 10px;
+}
+
+  input,
+  input::-webkit-input-placeholder {
+      font-size: 15px;
+      line-height: 4;
+      position:center;
+  }
+  .hello{
+  width:200px;  
+  padding: 0px 10px; 
+  height:50px;
+}
+  
+    
+    </style>
+	
+<body background-color= "blue">
+<form class="d_flex" method=POST
+    action="{% url 'search-any' %}" >
+    {% csrf_token %}
+    
+    <br><br><br>
+    <p font-family:"sans-serif"><h1><b>Search Here For Tweets</b></h1><br><br></p>
+      <input  type="text" class="searchbar" placeholder="Search Tweets" aria-label="Search" name="searched" width="500%">
+      <div class="a"><br><br>
+  <h4><b>Search Filter</b></h4>
+  <select name="dropdown" class="hello">
+    <option selected="selected" disabled>Country</option>
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+    <option value="Spain">Spain</option>
+    
+  </select>
+  
+
+</div><br><br>
+      <button  class="btn
+      
+      btn-outline-info" data-toggle="search" data-placement="top" title="Search" type="submit" id="searchbar">Search</button>
+      
+</form>
+
+<br><br><br>
+<h1>MAINTAIN SOCIAL DISTANCE TO AVOID COVID!</h1><br>
+<br><br>
+<h1>WEAR MASK - AND PROTECT YOURSELF</h1><br><br>
+<br><br>
+<span style='font-size:100px;'>&#128567;</span>
+</body>
+</center>
+{% endblock %}
