@@ -29,7 +29,7 @@ d. Topic Categorization:
 •	Store the topics alongside tweets in the Solr index for filtering.
 
 e. Web Application:
-•	Develop a Django-based web application:
+•	Developed a Django-based web application:
 o	A search bar for querying indexed tweets.
 o	Filters for language, sentiment, and topics.
 o	A visualization dashboard to display statistics (e.g., tweet sentiment distribution, trending topics).
